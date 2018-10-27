@@ -45,7 +45,7 @@ public void anyName(GUIClickEvent e)
 }
 ```
 
-## Methods
+## Intialize
 
 Down here is a list of methods that is apart of the API.
 
@@ -55,15 +55,15 @@ ZanGUI gui = new ZanGUI(Plugin plugin, String title, int numberOfRows);
 ```
 *Note: Number of rows is how many rows you want in the GUI. Maximum number is 6.*
 
-### All Methods
+## All Methods
 
-#### Inventory getRawInventory()
+### Inventory getRawInventory()
 Returns the natural inventory from the API.
 ```
 Inventory i = gui.getRawInventory();
 ```
 
-#### ZanGUI placeItem(int slot, ItemStack item)
+### ZanGUI placeItem(int slot, ItemStack item)
 Place an item in a specified location inside the inventory.
 Returns API's class.
 ```
@@ -71,7 +71,7 @@ ItemStack item = ZanGUI.createItem(Material.STICK);
 gui.placeItem(0, item);
 ```
 
-#### ZanGUI removeItem(int slot)
+### ZanGUI removeItem(int slot)
 Removes an item in a specified slot.
 This method naturally checks if the item is in the slot.
 Returns API's class.
@@ -79,7 +79,7 @@ Returns API's class.
 gui.removeItem(0);
 ```
 
-#### ZanGUI removeItem(ItemStack item)
+### ZanGUI removeItem(ItemStack item)
 Removes a specified item.
 This method naturally checks if the item is in the inventory.
 Returns API's class.
@@ -88,7 +88,7 @@ ItemStack item = ZanGUI.createItem(Material.STICK);
 gui.removeItem(item);
 ```
 
-#### boolean doesSlotContainItem(int slot)
+### boolean doesSlotContainItem(int slot)
 Checks if an item exists in a slot.
 Returns boolean.
 ```
@@ -97,7 +97,7 @@ if(gui.doesSlotContainItem(0)) {
 }
 ```
 
-#### boolean isItemInInventory(ItemStack item)
+### boolean isItemInInventory(ItemStack item)
 Checks if an item is in the inventory.
 Returns boolean.
 ```
@@ -107,21 +107,21 @@ if(gui.isItemInInventory()) {
 }
 ```
 
-#### ZanGUI openInventory(Player to)
+### ZanGUI openInventory(Player to)
 Makes player open the current inventory.
 Returns API's class.
 ```
 gui.openInventory(player);
 ```
 
-#### ZanGUI forceCloseInventory(Player to)
+### ZanGUI forceCloseInventory(Player to)
 If the inventory is opened, force the player to close the inventory.
 Returns API's class.
 ```
 gui.forceCloseInventory(player);
 ```
 
-#### boolean hasInventoryOpened(Player to)
+### boolean hasInventoryOpened(Player to)
 Checks to see if the player has the API's inventory opened.
 Returns boolean.
 ```
@@ -130,14 +130,14 @@ if(gui.hasInventoryOpened(player)) {
 }
 ```
 
-#### ZanGUI updateInventory(Player to)
+### ZanGUI updateInventory(Player to)
 Update the API's inventory while said player is in it. This can be used to animate.
 Returns API's class.
 ```
 gui.updateInventory(player);
 ```
 
-#### ZanGUI hookItemClick(ClickListener clickListener)
+### ZanGUI hookItemClick(ClickListener clickListener)
 Hook in the ClickListener to this GUI.
 Returns API's class.
 ```
@@ -145,7 +145,7 @@ ClickListener listener = new ClickListener(ClassWithListenerInIt.class);
 gui.hookItemClick(listener);
 ```
 
-#### ZanGUI hookInventoryOpen(InventoryOpenListener openListener)
+### ZanGUI hookInventoryOpen(InventoryOpenListener openListener)
 Hook in the InventoryOpenListener to this GUI.
 Returns API's class.
 ```
@@ -153,7 +153,7 @@ InventoryOpenListener listener = new InventoryOpenListener(ClassWithListenerInIt
 gui.hookInventoryOpen(listener);
 ```
 
-#### ZanGUI hookInventoryClose(InventoryCloseListener openListener)
+### ZanGUI hookInventoryClose(InventoryCloseListener openListener)
 Hook in the InventoryCloseListener to this GUI.
 Returns API's class.
 ```
@@ -161,102 +161,102 @@ InventoryCloseListener listener = new InventoryCloseListener(ClassWithListenerIn
 gui.hookInventoryClose(listener);
 ```
 
-### Static Methods
+## Static Methods
 
-#### ItemStack createItem(Material m)
+### ItemStack createItem(Material m)
 Creates a new item with said material.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createItem(Material.BOOK);
 ```
 
-#### ItemStack createItem(Material m, byte b)
+### ItemStack createItem(Material m, byte b)
 Creates a new item with said material with bytes.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createItem(Material.SKULL_ITEM, (byte) 3);
 ```
 
-#### ItemStack createItem(String s)
+### ItemStack createItem(String s)
 Creates a new item with said material as a string.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createItem("BOOK");
 ```
 
-#### ItemStack createItem(String s, byte b)
+### ItemStack createItem(String s, byte b)
 Creates a new item with said material as a string with bytes.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createItem("SKULL_ITEM", (byte) 3);
 ```
 
-#### ItemStack createSkeletonSkull()
+### ItemStack createSkeletonSkull()
 Create an item that is a skull of a skeleton.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createSkeletonSkull();
 ```
 
-#### ItemStack createWitherSkeletonSkull()
+### ItemStack createWitherSkeletonSkull()
 Create an item that is a skull of a wither skeleton.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createWitherSkeletonSkull();
 ```
 
-#### ItemStack createZombieSkull()
+### ItemStack createZombieSkull()
 Create an item that is a skull of a zombie. Pfft, like they have any.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createZombieSkull();
 ```
 
-#### ItemStack createHumanSkull()
+### ItemStack createHumanSkull()
 Create an item that is a skull of a human.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createHumanSkull();
 ```
 
-#### ItemStack createCreeperSkull()
+### ItemStack createCreeperSkull()
 Create an item that is a skull of a creeper.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createCreeperSkull();
 ```
 
-#### ItemStack createPlayerSkull(String playerName)
+### ItemStack createPlayerSkull(String playerName)
 Create an item that is a skull of a specified player.
 Returns ItemStack.
 ```
 ItemStack item = ZanGUI.createPlayerSkull("Notch");
 ```
 
-### Inside Classes
+## Inside Classes
 
-#### class ClickListener
+### class ClickListener
 Class for registering the GUI's click listener.
 ```
 ClickListener listener = new ClickListener(ClassWithListenerInIt.class);
 gui.hookItemClick(listener);
 ```
 
-#### class InventoryOpenListener
+### class InventoryOpenListener
 Class for registering the GUI's open inventory listener.
 ```
 InventoryOpenListener listener = new InventoryOpenListener(ClassWithListenerInIt.class);
 gui.hookInventoryOpen(listener);
 ```
 
-#### class InventoryCloseListener
+### class InventoryCloseListener
 Class for registering the GUI's close inventory listener.
 ```
 InventoryCloseListener listener = new InventoryCloseListener(ClassWithListenerInIt.class);
 gui.hookInventoryClose(listener);
 ```
 
-#### interface GUIClickEvent
+### interface GUIClickEvent
 Event to register a method listener with. Considered a class with a listener in it.
 ```
 @GUIEventHandler
@@ -265,11 +265,11 @@ public void chooseAName(GUIClickEvent e)
   //Code here
 }
 ```
-##### Methods:
+#### Methods:
 ```InventoryClickEvent getEvent();```
 ```ZanGUI getGUI();```
 
-#### interface GUIOpenEvent
+### interface GUIOpenEvent
 Event to register a method listener with. Considered a class with a listener in it.
 ```
 @GUIEventHandler
@@ -278,11 +278,11 @@ public void anyName(GUIOpenEvent e)
   //Code here
 }
 ```
-##### Methods:
+#### Methods:
 ```InventoryOpenEvent getEvent();```
 ```ZanGUI getGUI();```
 
-#### interface GUIOpenEvent
+### interface GUIOpenEvent
 Event to register a method listener with. Considered a class with a listener in it.
 ```
 @GUIEventHandler
@@ -291,11 +291,11 @@ public void randomName(GUICloseEvent e)
   //Code here
 }
 ```
-##### Methods:
+#### Methods:
 ```InventoryCloseEvent getEvent();```
 ```ZanGUI getGUI();```
 
-#### @interface GUIEventHandler
+### @interface GUIEventHandler
 Annotation for handling events.
 ```
 @GUIEventHandler
